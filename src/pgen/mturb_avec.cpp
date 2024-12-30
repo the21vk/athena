@@ -94,7 +94,7 @@ void Mesh::InitUserMeshData(ParameterInput *pin) {
 
 void MeshBlock::ProblemGenerator(ParameterInput *pin) {
 
-  Real amp = pin->GetOrAddReal("problem", "amp", 1.0e-6);
+  Real amp = pin->GetOrAddReal("problem", "amp", 1.0e-4);
   AthenaArray<Real> az;
   az.NewAthenaArray(ncells3, ncells2, ncells1);
   Real B0 = 1.0/std::sqrt(4.0*PI);
@@ -102,12 +102,14 @@ void MeshBlock::ProblemGenerator(ParameterInput *pin) {
 
   std::default_random_engine generator;
   std::uniform_real_distribution<Real> distribution(-1.0, 1.0);
+  std::int64_t iseed = -1-gid;
 
   // Initialize vector potential
   for (int k=ks; k<=ke+1; ++k) {  
     for (int j=js; j<=je+1; ++j) {
       for (int i=is; i<=ie+1; ++i) {
-        az(k,j,i) = 2.0*std::cos(pcoord->x2f(j));
+        // az(k,j,i) = 2.0*std::cos(pcoord->x2f(j));
+        az(k,j,i) = amp*(ran2(&iseed) - 0.5);
         
       }
     }
