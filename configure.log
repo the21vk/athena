@@ -1,5 +1,5 @@
   Your Athena++ distribution has now been configured with the following options: 
-  Problem generator:            mturb
+  Problem generator:            mturb_avec
   Coordinate system:            cartesian
   Equation of state:            adiabatic
   Riemann solver:               hlld
@@ -24,10 +24,10 @@
   Linker flags:                   -lfftw3 -lhdf5
   Floating-point precision:     double
   Number of ghost cells:        2
-  MPI parallelism:              ON
+  MPI parallelism:              OFF
   OpenMP parallelism:           OFF
   FFT:                          ON
   HDF5 output:                  ON
   HDF5 precision:               single
   Compiler:                     g++
-  Compilation command:          mpicxx  -O3 -std=c++11
+  Compilation command:          g++  -O3 -std=c++11

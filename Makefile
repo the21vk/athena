@@ -3,13 +3,13 @@
 
 # Files for conditional compilation
 
-PROBLEM_FILE = mturb.cpp
+PROBLEM_FILE = mturb_avec.cpp
 COORDINATES_FILE = cartesian.cpp
 EOS_FILE = adiabatic_mhd.cpp
 GENERAL_EOS_FILE = noop.cpp
 RSOLVER_FILE = hlld.cpp
 RSOLVER_DIR = mhd/
-MPIFFT_FILE =  $(wildcard src/fft/plimpton/*.cpp)
+MPIFFT_FILE =  
 CHEMNET_FILE = src/chemistry/network/none.cpp
 CHEMISTRY_FILE = src/chemistry/network_wrapper.cpp src/chemistry/utils/*.cpp
 CHEM_ODE_SOLVER_FILE = forward_euler.cpp
@@ -17,7 +17,7 @@ CHEMRADIATION_FILE = const.cpp
 
 # General compiler specifications
 
-CXX := mpicxx
+CXX := g++
 CPPFLAGS := 
 CXXFLAGS := -O3 -std=c++11
 LDFLAGS := 
