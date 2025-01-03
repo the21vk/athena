@@ -9,7 +9,7 @@ EOS_FILE = adiabatic_mhd.cpp
 GENERAL_EOS_FILE = noop.cpp
 RSOLVER_FILE = hlld.cpp
 RSOLVER_DIR = mhd/
-MPIFFT_FILE =  
+MPIFFT_FILE =  $(wildcard src/fft/plimpton/*.cpp)
 CHEMNET_FILE = src/chemistry/network/none.cpp
 CHEMISTRY_FILE = src/chemistry/network_wrapper.cpp src/chemistry/utils/*.cpp
 CHEM_ODE_SOLVER_FILE = forward_euler.cpp
@@ -17,7 +17,7 @@ CHEMRADIATION_FILE = const.cpp
 
 # General compiler specifications
 
-CXX := g++
+CXX := mpicxx
 CPPFLAGS := 
 CXXFLAGS := -O3 -std=c++11
 LDFLAGS := 

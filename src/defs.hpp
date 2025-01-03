@@ -95,7 +95,7 @@
 #define FFT
 
 // MPI parallelization (MPI_PARALLEL or NOT_MPI_PARALLEL)
-#define NOT_MPI_PARALLEL
+#define MPI_PARALLEL
 
 // OpenMP parallelization (OPENMP_PARALLEL or NOT_OPENMP_PARALLEL)
 #define NOT_OPENMP_PARALLEL
@@ -115,7 +115,7 @@
 
 // compiler options
 #define COMPILED_WITH "g++"
-#define COMPILER_COMMAND "g++"
+#define COMPILER_COMMAND "mpicxx"
 #define COMPILED_WITH_OPTIONS " -O3 -std=c++11   -lfftw3 -lhdf5" // NOLINT
 
 //----------------------------------------------------------------------------------------

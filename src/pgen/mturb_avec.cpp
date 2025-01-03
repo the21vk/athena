@@ -140,7 +140,7 @@ void MeshBlock::ProblemGenerator(ParameterInput *pin) {
   for (int k=ks; k<=ke; k++) {
     for (int j=js; j<=je; j++) {
       for (int i=is; i<=ie+1; i++) {
-        pfield->b.x1f(k,j,i) = (az(k,j+1,i) - az(k,j,i))/pcoord->dx2f(j) + 2.0;
+        pfield->b.x1f(k,j,i) = (az(k,j+1,i) - az(k,j,i))/pcoord->dx2f(j);
       }
     }
   }
@@ -167,6 +167,3 @@ void MeshBlock::ProblemGenerator(ParameterInput *pin) {
 
 void Mesh::UserWorkAfterLoop(ParameterInput *pin) {
 }
-
-
-
